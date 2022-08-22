@@ -21,7 +21,10 @@ ${problem}
 
 ## What I learned
 
-${learned}`;
+${learned}
+
+![Screenshot of site](./video/Screen%20Shot%202022-08-18%20at%2012.12.21%20AM.png)
+[Screen recording of using file](https://youtu.be/kcY75H0SkpE "Screen recording of using file")`;
 
 //uses inquirer to prompt the user to create a README and run the function
 inquirer
