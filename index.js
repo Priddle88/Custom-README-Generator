@@ -4,12 +4,12 @@ const inquirer = require('inquirer');
 const fs = require('fs');
 
 // function that grabs the variables from the prompts and makes a README file
-const makeReadme = ({name, motivation, why, problem, learned}) =>
+const makeReadme = ({description, motivation, why, problem, learned}) =>
 `# Custom-README-Generator
 
-A custom README created with Node!
+## Description of Project
 
-## My name is ${name}
+${description}
 
 ${motivation}
 
@@ -31,8 +31,8 @@ inquirer
   .prompt([
     {
         type: 'input',
-        message: 'What is your name?',
-        name: 'name',
+        message: 'Description of project:',
+        name: 'description',
     },
     {
         type: 'input',
@@ -55,7 +55,7 @@ inquirer
         name: 'learned',
     }
 ]) .then ((response) => {
-        console.log(`Name: ${response.name}`);
+        // console.log(`Name: ${response.name}`);
         console.log(`Location: ${response.motivation}`);
         console.log(`Bio: ${response.why}`);
         console.log(`linked: ${response.problem}`);
