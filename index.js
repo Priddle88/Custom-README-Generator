@@ -2,67 +2,131 @@
 const inquirer = require('inquirer');
 // grabs the fs to write the file
 const fs = require('fs');
+const licenses = ["MIT", "GNU GPLv3"];
 
 // function that grabs the variables from the prompts and makes a README file
-const makeReadme = ({description, motivation, why, problem, learned}) =>
-`# Custom-README-Generator
+const makeReadme = ({ title, description, installation, screenshot, license, usage, credits, test, github, email }) =>
 
-## Description of Project
+    `# ${title}
+
+![License logo](./assets/${licenseInfo(licenses)})
+
+## Description
 
 ${description}
 
-${motivation}
+## Table of Contents
 
-## Why
+- [Installation](#installation)
+- [Usage](#usage)
+- [Credits](#credits)
+- [License](#license)
 
-${why}
+## Installation
 
-${problem}
+${installation}
 
-## What I learned
+## Usage
 
-${learned}
+${usage}
 
-![Screenshot of site](./video/Screen%20Shot%202022-08-18%20at%2012.12.21%20AM.png)
-[Screen recording of using file](https://youtu.be/kcY75H0SkpE "Screen recording of using file")`;
+![Screenshot of site](./assets/${screenshot}.png)
 
-//uses inquirer to prompt the user to create a README and run the function
-inquirer
-  .prompt([
-    {
-        type: 'input',
-        message: 'Description of project:',
-        name: 'description',
-    },
-    {
-        type: 'input',
-        message: 'What was your motivation?',
-        name: 'motivation',
-    },
-    {
-        type: 'input',
-        message: 'Why did you build this project?',
-        name: 'why',
-    },
-    {
-        type: 'input',
-        message: 'What problem does it solve?',
-        name: 'problem',
-    },
-    {
-        type: 'input',
-        message: 'What did you learn?',
-        name: 'learned',
+[Screen recording of using file](https://youtu.be/kcY75H0SkpE "Screen recording of using file")
+
+## License
+
+${license}
+
+## Contributing
+
+${credits}
+
+## Tests
+
+${test}
+
+## Questions
+
+GitHub username: ${github}
+
+GitHub profile: [Link to Profile](https://github.com/${github})
+
+Reach out to ${email} (with your first name included) if you have any questions!
+`;
+
+const licenseInfo = (licenses) => {
+    let licImage = '';
+
+    if (licenses == "MIT") {
+        licImage = "MIT-License.png";
+    } else {
+        licImage = "GPL-V3-license-image.png";
     }
-]) .then ((response) => {
-        // console.log(`Name: ${response.name}`);
-        console.log(`Location: ${response.motivation}`);
-        console.log(`Bio: ${response.why}`);
-        console.log(`linked: ${response.problem}`);
-        console.log(`github: ${response.learned}`);
+    console.log(licImage);
+    return licImage;
+}
 
-        fs.writeFile("README.md", makeReadme(response), (err) =>
+
+inquirer
+    .prompt([
+        {
+            type: 'input',
+            message: 'What is the title of the project?',
+            name: 'title',
+        },
+        {
+            type: 'input',
+            message: 'Description of project:',
+            name: 'description',
+        },
+        {
+            type: 'input',
+            message: 'What are the steps required to install your project?',
+            name: 'installation',
+        },
+        {
+            type: 'input',
+            message: 'Link of screenshot',
+            name: 'screenshot',
+        },
+        {
+            type: 'input',
+            message: 'Instructions for how to use:',
+            name: 'usage',
+        },
+        {
+            type: 'list',
+            message: 'Choose an open source license',
+            choices: licenses,
+            name: 'license',
+        },
+        {
+            type: 'input',
+            message: 'List any collaborators/third-party assets?',
+            name: 'credits',
+        },
+        {
+            type: 'input',
+            message: 'Instructions to test:',
+            name: 'test',
+        },
+        {
+            type: 'input',
+            message: 'Enter your Github username',
+            name: 'github',
+        },
+        {
+            type: 'input',
+            message: 'What is you email?',
+            name: 'email',
+        }
+    ]).then((response) => {
+
+        console.log(response);
+
+        fs.writeFile("new/README.md", makeReadme(response), (err) =>
             err ? console.error(err) : console.log("Success!")
         );
 
-});
+    });

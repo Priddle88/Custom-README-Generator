@@ -1,20 +1,46 @@
-# Custom-README-Generator
+# Custom README Generator
 
-## Description of Project
+![License logo](./assets/GPL-V3-license-image.png)
 
-I was tasked with creating a README file using Node. I created a function that would input the text using the input from the user
+## Description
 
-Getting better using Node
+An application that will create custom READMEs based off of user input
 
-## Why
+## Table of Contents
 
-To easily create a README file using a previously picked layout
+- [Installation](#installation)
+- [Usage](#usage)
+- [Credits](#credits)
+- [License](#license)
 
-Save time writing READMEs
+## Installation
 
-## What I learned
+Make sure that inquirer and fs are installed
 
-I can use Node to create files based off of user input
+## Usage
 
-![Screenshot of site](./video/Screen%20Shot%202022-08-18%20at%2012.12.21%20AM.png)
+type node index.js or npm start to run the files
+
+![Screenshot of site](./assets/Screen-Shot-2022-08-18-at-12.12.21-AM.png)
+
 [Screen recording of using file](https://youtu.be/kcY75H0SkpE "Screen recording of using file")
+
+## License
+
+GNU GPLv3
+
+## Contributing
+
+GitHub Docs, this week's mini project
+
+## Tests
+
+run the test script
+
+## Questions
+
+GitHub username: Priddle88
+
+GitHub profile: [Link to Profile](https://github.com/Priddle88)
+
+Reach out to parkerriddle09@gmail.com (with your first name included) if you have any questions!
