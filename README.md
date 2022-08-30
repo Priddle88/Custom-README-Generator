@@ -1,6 +1,6 @@
 # Custom README Generator
 
-![License logo](./assets/GPL-V3-license-image.png)
+![License logo](./assets/MIT-License.png)
 
 ## Description
 
@@ -27,7 +27,7 @@ type node index.js or npm start to run the files
 
 ## License
 
-GNU GPLv3
+MIT
 
 ## Contributing
 
@@ -35,7 +35,7 @@ GitHub Docs, this week's mini project
 
 ## Tests
 
-run the test script
+N/A
 
 ## Questions
 

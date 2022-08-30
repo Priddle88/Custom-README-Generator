@@ -9,7 +9,7 @@ const makeReadme = ({ title, description, installation, screenshot, license, usa
 
     `# ${title}
 
-![License logo](./assets/${licenseInfo(licenses)})
+![License logo](./assets/${licenseInfo(license)})
 
 ## Description
 
@@ -125,7 +125,7 @@ inquirer
 
         console.log(response);
 
-        fs.writeFile("new/README.md", makeReadme(response), (err) =>
+        fs.writeFile("README.md", makeReadme(response), (err) =>
             err ? console.error(err) : console.log("Success!")
         );
 
