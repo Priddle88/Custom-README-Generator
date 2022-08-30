@@ -1,6 +1,6 @@
 # Custom README Generator
 
-![License logo](./assets/MIT-License.png)
+<img src="./assets/MIT-License.png" alt="License Image" width="200"/>
 
 ## Description
 

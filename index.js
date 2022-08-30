@@ -9,7 +9,7 @@ const makeReadme = ({ title, description, installation, screenshot, license, usa
 
     `# ${title}
 
-![License logo](./assets/${licenseInfo(license)})
+<img src="./assets/${licenseInfo(license)}" alt="License Image" width="200"/>
 
 ## Description
 
