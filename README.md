@@ -19,7 +19,7 @@ Make sure that inquirer and fs are installed
 
 ## Usage
 
-type node index.js or npm start to run the files
+type node index.js or npm start to run the files. Answer prompts to fill in the README later
 
 ![Screenshot of site](./assets/Screen-Shot-2022-08-18-at-12.12.21-AM.png)
 
